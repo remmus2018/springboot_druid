@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!--是否开启全局延迟加载，默认开启，如果禁止，所有关联查询都会立即加载 -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<!--配置默认的执行器。SIMPLE 执行器没 有什么特别之处。REUSE 执行器重用 预处理语句。BATCH 执行器重用语句 和批量更新   设定BATCH会导致insert不能立即返回Id-->
+		<setting name="defaultExecutorType" value="REUSE" />
+		<!--设置超时时间, 它决定驱动等待一个数 据库响应的时间-->
+		<setting name="defaultStatementTimeout" value="3000" />
+		<!--匹配log日志实现类,不设置会自动进行检测，这里指定为LOG4J2-->
+		<!--
+		<setting name="logImpl" value="LOG4J2"/>
+		-->
+		<setting name="logImpl" value="STDOUT_LOGGING"/>
+
+
+	</settings>
+
+	<mappers>
+		<mapper resource="mapper/SystemDBbakMapper.xml" />
+	</mappers>
+</configuration>
